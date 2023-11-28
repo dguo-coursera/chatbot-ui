@@ -1,5 +1,4 @@
-import { Message } from '@/types/chat';
-import { OpenAIModel } from '@/types/openai';
+import { ChatModel, Message } from '@/types/chat';
 
 import { OPENAI_API_HOST, OPENAI_API_TYPE, OPENAI_API_VERSION, OPENAI_ORGANIZATION } from '../app/const';
 
@@ -24,7 +23,7 @@ export class OpenAIError extends Error {
 }
 
 export const OpenAIStream = async (
-  model: OpenAIModel,
+  model: ChatModel,
   systemPrompt: string,
   temperature : number,
   key: string,
