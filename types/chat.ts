@@ -1,14 +1,20 @@
-import { OpenAIModel } from './openai';
-
 export interface Message {
   role: Role;
   content: string;
 }
 
+export interface ChatModel {
+  id: string;
+  name: string;
+  maxLength: number; // maximum length of a message
+  tokenLimit: number;
+  requestLimit: number;
+}
+
 export type Role = 'assistant' | 'user';
 
 export interface ChatBody {
-  model: OpenAIModel;
+  model: ChatModel;
   messages: Message[];
   key: string;
   prompt: string;
@@ -19,7 +25,7 @@ export interface Conversation {
   id: string;
   name: string;
   messages: Message[];
-  model: OpenAIModel;
+  model: ChatModel;
   prompt: string;
   temperature: number;
   folderId: string | null;

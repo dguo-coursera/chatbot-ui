@@ -1,10 +1,10 @@
-import { OpenAIModel } from './openai';
+import { ChatModel } from "./chat";
 
 export interface Prompt {
   id: string;
   name: string;
   description: string;
   content: string;
-  model: OpenAIModel;
+  model: ChatModel;
   folderId: string | null;
 }
