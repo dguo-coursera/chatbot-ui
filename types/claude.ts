@@ -21,7 +21,7 @@ export class ClaudeAIError extends Error {
 
   constructor(message: string, type: string, param: string, code: string) {
     super(message);
-    this.name = 'OpenAIError';
+    this.name = 'ClaudeAIError';
     this.type = type;
     this.param = param;
     this.code = code;
